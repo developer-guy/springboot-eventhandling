@@ -10,9 +10,17 @@ public class UserEvent extends ApplicationEvent {
     @Getter
     private User user;
 
+    public boolean isAdmin;
+
     public UserEvent(Object source, User user) {
         super(source);
         this.user = user;
+        this.isAdmin = user.isAdmin();
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
 
 }
